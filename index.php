@@ -10,6 +10,29 @@ $config = array(
 PHPShopify\ShopifySDK::config($config);
 $shopify = new PHPShopify\ShopifySDK;
 
+//-----------------------CRUD OPERATION WITH REST API----------------
+// $ar = [
+//     'title' => 'update Testing Product',
+//     'body-html' => '<p>This is testing description</p>',
+//     'vendor' => "Hello world",
+//     'tags' => 'code,test',
+//     'variants' => [
+//         'price' => '100.00',
+//         'sku' => 'SKU001'
+//     ]
+// ];
+//CRUD operation
+// $response = $shopify->Product->post($ar);
+// $response = $shopify->Product('9490545803560')->put($ar);
+// $response = $shopify->Product('9490545803560')->get($ar);
+//$response = $shopify->Product('9490545803560')->delete();
+// echo '<pre>';
+// print_r($response);
+// echo '</pre>';
+
+
+
+//-----------------------CRUD OPERATION WITH GRAPHQL----------------
 
 //-------------------------------CREATE PRODUCT---------------------//
 // $graphQLCreateProduct = <<<Query
@@ -175,41 +198,3 @@ echo '<pre>';
 print_r($response);
 echo '</pre>';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-// id
-// if (isset($response['data']['productCreate']['product']['id'])) {
-//     $productId = $response['data']['productCreate']['product']['id'];
-//     echo "New Product ID: " . $productId . "\n";
-// }
-
-// $graphQLCreateProduct = <<<Query
-    // mutation {
-    // productCreate(input: {
-    // title: "hello GraphQL Basic Testing Product" ,
-    // descriptionHtml: "<p>This is a basic product created with GraphQL without variants.</p>" ,
-    // vendor: "Hello World Vendor" ,
-    // tags: ["code", "test" ]
-    // }) {
-    // product {
-    // id
-    // title
-    // descriptionHtml
-    // tags
-    // }
-    // }
-    // }
-    // Query;
-
-    // $response=$shopify->GraphQL->post($graphQLCreateProduct);
-    // Define the mutation -->
